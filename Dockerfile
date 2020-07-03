@@ -7,6 +7,11 @@ RUN apt-get update && apt-get -y install \
 
 RUN rm /bin/sh && ln -s bash /bin/sh
 
+WORKDIR /tmp
+RUN wget https://storage.googleapis.com/git-repo-downloads/repo \
+     && cp repo /usr/bin/repo \
+     && chmod a+x /usr/bin/repo
+
 RUN locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
