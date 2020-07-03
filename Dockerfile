@@ -16,6 +16,9 @@ RUN locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
+# limit number of open files to 1024, increases the do_rootfs speed
+RUN echo 'ulimit -n 1024' >> /etc/profile
+
 ENV USER_NAME jenkins
 
 ARG host_uid=1000
