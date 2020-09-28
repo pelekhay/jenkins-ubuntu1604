@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 RUN apt-get update && apt-get -y install \
-     uidmap gawk wget git-core diffstat unzip texinfo gcc-multilib \
+     uidmap gawk wget git-core git-lfs diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
      xz-utils debianutils iputils-ping libsdl1.2-dev xterm tar locales pxz zip \
      mtools dosfstools parted udev
