@@ -12,7 +12,7 @@ RUN rm /bin/sh && ln -s bash /bin/sh
 
 WORKDIR /tmp
 RUN curl -s https://storage.googleapis.com/git-repo-downloads/repo | \
-     sed 's|#!/usr/bin/env python|/#!/usr/bin/env python3|g' > /usr/bin/repo \
+     sed 's|#!/usr/bin/env python|#!/usr/bin/env python3|g' > /usr/bin/repo \
      && chmod a+x /usr/bin/repo
 
 RUN locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
